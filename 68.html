@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    function displayName() {
+      var enteredNumber = parseInt(document.getElementById("numberInput").value);
+      var name = "sławski";
+      var firstName = "mateusz";
+      var numLettersInName = name.length;
+      var numLettersInFirstName = firstName.length;
+      var timesToDisplay = (numLettersInName % 4) + 10;
+      var fontSize = (numLettersInName % 3) + 40 + "px";
+      
+      if (enteredNumber % 2 === 0) {
+        for (var i = 0; i < timesToDisplay; i++) {
+          document.write("<p style='color: blue; font-size: " + fontSize + ";'>" + name + "</p>");
+        }
+      } else {
+        for (var i = 0; i < timesToDisplay; i++) {
+          document.write("<p style='color: green; font-size: " + fontSize + ";'>" + firstName + "</p>");
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="numberInput">
+  <button onclick="displayName()">Display Name or First Name</button>
+</body>
+</html>

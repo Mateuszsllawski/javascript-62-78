@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script>
+      function displayNumbers() {
+        var firstNumber = parseInt(document.getElementById("firstNumber").value);
+        var secondNumber = parseInt(document.getElementById("secondNumber").value);
+        
+        if (firstNumber == secondNumber) {
+          var result = confirm("Liczby są równe");
+          if (!result) {
+            return;
+          }
+        }
+
+        var start, end, step, fontSize, color;
+        if (firstNumber < secondNumber) {
+          start = firstNumber;
+          end = secondNumber;
+          step = 1;
+          fontSize = "20px";
+          color = "green";
+        } else {
+          start = secondNumber;
+          end = firstNumber;
+          step = -1;
+          fontSize = "10px";
+          color = "blue";
+        }
+
+        var numbers = "";
+        for (var i = start; i <= end; i += step) {
+          if (i % 2 != 0) {
+            numbers += "<p style='color: " + color + "; font-size: " + fontSize + ";'>" + i + "</p>";
+          }
+        }
+        document.getElementById("output").innerHTML = numbers;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label for="firstNumber">Pierwszy numer:</label>
+      <input type="text" id="firstNumber"><br><br>
+      <label for="secondNumber">Drugi numer:</label>
+      <input type="text" id="secondNumber"><br><br>
+      <input type="button" value="oblicz" onclick="displayNumbers()">
+    </form>
+    <div id="output"></div>
+  </body>
+</html>

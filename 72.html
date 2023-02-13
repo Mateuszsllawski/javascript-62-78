@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+<script language="JavaScript">
+{
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.question("Podaj imię: ", (name) => {
+  readline.question("Podaj nazwisko: ", (surname) => {
+    let a = (surname.length % 4) + 5;
+    let b = (name.length % 6) + 20;
+
+    console.log(""); // pusta linia
+
+    // górne poziome gwiazdki
+    for (let i = 0; i < a; i++) {
+      let row = "";
+      for (let j = 0; j < b; j++) {
+        row += "*";
+      }
+      console.log(row);
+    }
+
+    // pionowe gwiazdki
+    for (let i = 0; i < b-2; i++) {
+      console.log("*" + " ".repeat(a-2) + "*");
+    }
+
+    // dolne poziome gwiazdki
+    for (let i = 0; i < a; i++) {
+      let row = "";
+      for (let j = 0; j < b; j++) {
+        row += "*";
+      }
+      console.log(row);
+    }
+
+    readline.close();
+  });
+});
+</script>
+</body>
+</html>

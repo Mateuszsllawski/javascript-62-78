@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liczby pierwsze</title>
+</head>
+<body>
+  <script>
+    var i, w, isPrime, counter;
+    counter = 0;
+    for (i = 0; i < 40; i++) {
+      w = i * i + i + 41;
+      isPrime = true;
+      for (j = 2; j <= Math.sqrt(w); j++) {
+        if (w % j == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) {
+        counter++;
+        document.write("i=" + i + " w(" + i + ")=" + w + "<br>");
+        if (counter % 5 == 0) {
+          document.write("<br>");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
